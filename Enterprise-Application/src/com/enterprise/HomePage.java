@@ -11,18 +11,21 @@ import javax.swing.JPanel;
 
 public class HomePage extends JPanel implements ActionListener{
 
-	JButton book,available,booked,back;
+	JButton book,available,booked,back,profile;
 	CenterPanel cp;
 	JPanel menu;
 	CardLayout cl;
 	BookTickets bt;
 	BookedTickets bts;
+	ProfilePanel pp;
 	
 	public HomePage() {
 		cl = new CardLayout();
 		menu = new JPanel();
 		bt = new BookTickets();
 		bts = new BookedTickets();
+		pp = new ProfilePanel();
+		pp.setDeck(this);
 		bts.setDeck(this);
 		bt.setDeck(this);
 		menu.setLayout(new FlowLayout());
@@ -32,16 +35,20 @@ public class HomePage extends JPanel implements ActionListener{
 		available = new JButton("Check seats Availability");
 		booked = new JButton("See Booked seats");
 		back = new JButton("Back");
+		profile = new JButton("Profile");
 		back.setBackground(Color.red);
 		menu.add(book);
 		menu.add(available);
 		menu.add(booked);
+		menu.add(profile);
 		menu.add(back);
 		add(menu,"menu");
 		add(bt,"Book Tickets");
 		add(bts,"Booked Tickets");
+		add(pp,"Profile");
 		book.addActionListener(this);
 		back.addActionListener(this);
+		profile.addActionListener(this);
 		booked.addActionListener(this);
 	}
 	
@@ -58,6 +65,8 @@ public class HomePage extends JPanel implements ActionListener{
 			cp.cl.show(cp,"Login");
 		}else if(actioncommand.equals("See Booked seats")) {
 			cl.show(this, "Booked Tickets");
+		}else if(actioncommand.equals("Profile")) {
+			cl.show(this, "Profile");
 		}
 	}
 }
