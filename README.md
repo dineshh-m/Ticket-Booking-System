@@ -1,4 +1,7 @@
-# Ticket-Booking-System
-Ticket Booking System (Hobby project)
-This is simple GUI program written in java for booking tickets.
-To run : Change your current directory into target and type "java com.enterprise.Main".
+# Ticket Booking System
+
+<ul><li>A Simple java GUI program for reserving plane tickets.</li></ul>
+
+## To Run
+
+<ul><li>Change your curent directory to "target" and type "java com.enterprise.Main".</li></ul>
